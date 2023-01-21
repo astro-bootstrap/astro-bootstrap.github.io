@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="generator" content="Astro v1.9.2">
+    <title>Getting Started - Astro-Bootstrap</title>
+  <link rel="stylesheet" href="/assets/index.0944aefd.css" /><script type="module" src="/hoisted.aed8da9a.js"></script></head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary sticky-top" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Astro-Bootstrap</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+  <a href="/" class="nav-link astro-BTTTMIM6">Home</a>
+
+</li><li class="nav-item">
+  <a href="/getting-started" class="nav-link astro-BTTTMIM6">Getting Started</a>
+
+</li><li class="nav-item">
+  <a href="/components" class="nav-link astro-BTTTMIM6">Components</a>
+
+</li>
+      </ul>
+</div>
+
+  </div>
+</nav>
+    </header>
+    <main>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col">
+          <h1>Getting Started</h1>
+          <p><strong>Step 1 - Install with the package manager of your choice:</strong></p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">#npm</span></span>
+<span class="line"><span style="color: #C9D1D9">npm install astro-bootstrap</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E"># yarn</span></span>
+<span class="line"><span style="color: #C9D1D9">yarn add astro-bootstrap</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E"># pnpm</span></span>
+<span class="line"><span style="color: #C9D1D9">pnpm add astro-bootstrap</span></span></code></pre>
+<p><strong>Step 2 - Ensure that you have bootstrap v5.x installed. (it’s a peer dependency, so install the version that you want)</strong></p>
+<p>e.g.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">#npm</span></span>
+<span class="line"><span style="color: #C9D1D9">npm install bootstrap@latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E"># yarn</span></span>
+<span class="line"><span style="color: #C9D1D9">yarn add bootstrap@latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E"># pnpm</span></span>
+<span class="line"><span style="color: #C9D1D9">pnpm add bootstrap@latest</span></span></code></pre>
+<p><strong>Step 3 - Ensure that the bootstrap CSS (your your modified version of it) is being loaded</strong></p>
+<p>You should create a BaseLayout component which is imported into each layout file that you use e.g.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"><span style="color: #8B949E">// /src/layouts/BaseLayout.astro</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'bootstrap/dist/css/bootstrap.css'</span></span>
+<span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"><span style="color: #FF7B72">{</span><span style="color: #8B949E">/* the rest of your layout file here */</span><span style="color: #FF7B72">}</span></span></code></pre>
+<p><strong>Step 4 - Import and use an Astro-Bootstrap component</strong></p>
+<p>e.g.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { Breadcrumbs } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'astro-bootstrap'</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">Breadcrumbs</span><span style="color: #C9D1D9"> /></span></span></code></pre>
+        </div>
+      </div>
+    </div>
+  </main>
+  </body></html>
