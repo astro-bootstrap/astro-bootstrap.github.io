@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/svg+xml" href="/ab64x64.png">
     <meta name="generator" content="Astro v1.9.2">
-    <title>Tooltips - Astro-Bootstrap</title>
+    <title>Collapse - Astro-Bootstrap</title>
   <link rel="stylesheet" href="/assets/index.ffed6f38.css" />
 <link rel="stylesheet" href="/assets/index.e1424953.css" />
 <link rel="stylesheet" href="/assets/accordion.c16e7c96.css" />
@@ -42,7 +42,7 @@
     <div class="row flex-class astro-QL3UKEHM">
       <div class="col-xl-8 col-lg-6 col-sm-4 col-12 py-2 px-3 astro-QL3UKEHM">
         <main class="astro-QL3UKEHM">
-          <h1 id="overview" class="astro-QL3UKEHM">Tooltips</h1>
+          <h1 id="overview" class="astro-QL3UKEHM">Collapse</h1>
           <p class="lead mb-2 astro-QL3UKEHM">
                 <!-- {
   Astro.slots.has('default') &&
@@ -51,20 +51,26 @@
     ) : (
       <Fragment set:html={xss(marked.parse(slot))} />
     ))
-} -->Documentation and examples for adding custom Bootstrap tooltips with CSS and JavaScript using CSS3 for animations and data-bs-attributes for local title storage.
+} -->Toggle the visibility of content across your project with a few classes and a Bootstrap JS plugin.
 
               </p>
           
           <h2 id="examples">Examples</h2>
-<h3 id="basic">Basic</h3>
+<h3 id="via-data-attribute">Via data-attribute</h3>
 <div class="container-fluid border rounded g-0 mb-3">
   <div class="row p-3">
     <div class="col">
-      <p class="muted">
-  Placeholder text to demonstrate some <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to
-  mimic the presence of <a href="#" data-bs-toggle="tooltip" data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used
-  in real-world situations. So hopefully you've now seen how <a href="#" data-bs-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-bs-toggle="tooltip" data-bs-title="The last tip!">your own</a> site or project.
+      <p>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-bs-target
+  </button>
 </p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Some placeholder content for the collapse component. This panel is hidden by
+    default but revealed when the user activates the relevant trigger.
+  </div>
+</div>
 
     </div>
   </div>
@@ -77,38 +83,29 @@
     <div class="col">
       <pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
 <span class="line"><span style="color: #8B949E">// Template example only</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">target</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;collapseExample&#39;</span></span>
 <span class="line"><span style="color: #8B949E">---</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;muted&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  Placeholder text to demonstrate some &lt;</span><span style="color: #7EE787">a</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;#&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-toggle</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;tooltip&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-title</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;Default tooltip&quot;</span><span style="color: #C9D1D9">&gt;inline links&lt;/</span><span style="color: #7EE787">a</span></span>
-<span class="line"><span style="color: #C9D1D9">  &gt; with tooltips. This is now just filler, no killer. Content placed here just to</span></span>
-<span class="line"><span style="color: #C9D1D9">  mimic the presence of &lt;</span><span style="color: #7EE787">a</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;#&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-toggle</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;tooltip&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-title</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;Another tooltip&quot;</span><span style="color: #C9D1D9">&gt;real text&lt;/</span><span style="color: #7EE787">a</span></span>
-<span class="line"><span style="color: #C9D1D9">  &gt;. And all that just to give you an idea of how tooltips would look when used</span></span>
-<span class="line"><span style="color: #C9D1D9">  in real-world situations. So hopefully you&#39;ve now seen how &lt;</span><span style="color: #7EE787">a</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;#&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-toggle</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;tooltip&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-title</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;Another one here too&quot;</span><span style="color: #C9D1D9">&gt;these tooltips on links&lt;/</span><span style="color: #7EE787">a</span></span>
-<span class="line"><span style="color: #C9D1D9">  &gt; can work in practice, once you use them on &lt;</span><span style="color: #7EE787">a</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;#&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-toggle</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;tooltip&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-title</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;The last tip!&quot;</span><span style="color: #C9D1D9">&gt;your own&lt;/</span><span style="color: #7EE787">a</span></span>
-<span class="line"><span style="color: #C9D1D9">  &gt; site or project.</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">button</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;btn btn-primary&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">type</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;button&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-toggle</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;collapse&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-target</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #A5D6FF">`#${</span><span style="color: #C9D1D9">target</span><span style="color: #A5D6FF">}`</span><span style="color: #FF7B72">}</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">aria-expanded</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;false&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">aria-controls</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">target</span><span style="color: #FF7B72">}</span></span>
+<span class="line"><span style="color: #C9D1D9">  &gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">    Button with data-bs-target</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;/</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;collapse&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">id</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">target</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;card card-body&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">    Some placeholder content for the collapse component. This panel is hidden by</span></span>
+<span class="line"><span style="color: #C9D1D9">    default but revealed when the user activates the relevant trigger.</span></span>
+<span class="line"><span style="color: #C9D1D9">  &lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> Tooltip </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;bootstrap/js/dist/tooltip&#39;</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">tooltipTriggerList</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> document.</span><span style="color: #D2A8FF">querySelectorAll</span><span style="color: #C9D1D9">(</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;[data-bs-toggle=&quot;tooltip&quot;]&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">  );</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #8B949E">/* eslint-disable-next-line  no-unused-vars*/</span><span style="color: #C9D1D9"> </span><span style="color: #8B949E">// only required if using es-lint</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">tooltipList</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #FF7B72">...</span><span style="color: #C9D1D9">tooltipTriggerList].</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">(</span></span>
-<span class="line"><span style="color: #C9D1D9">    (</span><span style="color: #FFA657">tooltipTriggerEl</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=&gt;</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">Tooltip</span><span style="color: #C9D1D9">(tooltipTriggerEl),</span></span>
-<span class="line"><span style="color: #C9D1D9">  );</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;bootstrap/js/dist/collapse&#39;</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"></span></code></pre>
 
@@ -116,6 +113,7 @@
     </div>
   </div>
 </div>
+
 
         </main>
       </div>
@@ -252,8 +250,8 @@
         </a>
         <ul class="toc list-unstyled astro-QOEM7CAO">
   <li class="astro-QOEM7CAO">
-        <a class="header-link depth-3 text-decoration-none astro-QOEM7CAO" href="#basic">
-          Basic
+        <a class="header-link depth-3 text-decoration-none astro-QOEM7CAO" href="#via-data-attribute">
+          Via data-attribute
         </a>
         
       </li>

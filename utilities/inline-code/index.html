@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/svg+xml" href="/ab64x64.png">
     <meta name="generator" content="Astro v1.9.2">
-    <title>Button group - Astro-Bootstrap</title>
+    <title>InlineCode - Astro-Bootstrap</title>
   <link rel="stylesheet" href="/assets/index.ffed6f38.css" />
 <link rel="stylesheet" href="/assets/index.e1424953.css" />
 <link rel="stylesheet" href="/assets/accordion.c16e7c96.css" />
@@ -42,7 +42,7 @@
     <div class="row flex-class astro-QL3UKEHM">
       <div class="col-xl-8 col-lg-6 col-sm-4 col-12 py-2 px-3 astro-QL3UKEHM">
         <main class="astro-QL3UKEHM">
-          <h1 id="overview" class="astro-QL3UKEHM">Button group</h1>
+          <h1 id="overview" class="astro-QL3UKEHM">InlineCode</h1>
           <p class="lead mb-2 astro-QL3UKEHM">
                 <!-- {
   Astro.slots.has('default') &&
@@ -51,23 +51,25 @@
     ) : (
       <Fragment set:html={xss(marked.parse(slot))} />
     ))
-} -->Group a series of buttons together on a single line or stack them in a vertical column.
+} -->The inline code allows you to emulate `inline-code` (<code>inline-code</code>) in an Astro component.
 
               </p>
           
-          <p>The button group HTML markup can be simplified and made more dry by adding the button text to an array, and iterating over it e.g.</p>
+          <p>The <code>InlineCode</code> component allows you to use the Marked frontmatter formatter to format strings as inline code.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="basic-example">Basic Example</h3>
 <div class="container-fluid border rounded g-0 mb-3">
   <div class="row p-3">
     <div class="col">
-      <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-primary">
-        Left
-      </button><button type="button" class="btn btn-primary">
-        Center
-      </button><button type="button" class="btn btn-primary">
-        Right
-      </button>
-</div>
+      <p>This is an example of inline code: <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} --><code>getStaticProps()</code>
+</p>
     </div>
   </div>
   <div class="row">
@@ -78,18 +80,10 @@
   <div class="row">
     <div class="col">
       <pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
-<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">buttons</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [{ text: </span><span style="color: #A5D6FF">&#39;Left&#39;</span><span style="color: #C9D1D9"> }, { text: </span><span style="color: #A5D6FF">&#39;Center&#39;</span><span style="color: #C9D1D9"> }, { text: </span><span style="color: #A5D6FF">&#39;Right&#39;</span><span style="color: #C9D1D9"> }];</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { InlineCode } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;astro-bootstrap&#39;</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">&gt;This is an example of inline code: &lt;</span><span style="color: #7EE787">InlineCode</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">code</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;getStaticProps()&quot;</span><span style="color: #C9D1D9"> /&gt;&lt;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;btn-group&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">role</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;group&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">aria-label</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;Basic example&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">{</span></span>
-<span class="line"><span style="color: #C9D1D9">    buttons.</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">button</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=&gt;</span><span style="color: #C9D1D9"> (</span></span>
-<span class="line"><span style="color: #C9D1D9">      &lt;</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">type</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">&quot;button&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">&quot;btn btn-primary&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">button.text</span><span style="color: #FF7B72">}</span></span>
-<span class="line"><span style="color: #C9D1D9">      &lt;/</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">    ))</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">}</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"></span></code></pre>
 
       <!-- {code} -->
@@ -97,6 +91,38 @@
   </div>
 </div>
 
+<h2 id="api">API</h2>
+<h3 id="inlinecode">InlineCode</h3>
+<pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">import { InlineCode } from &#39;astro-bootstrap&#39;</span></span></code></pre>
+
+<div class="overflow-auto mt-4 mb-5">
+  <table class="mb-0 table table-striped table-bordered">
+    <thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr class="prop-table-row">
+            <td>
+              code 
+              <sup class="text-danger">required</sup>
+            </td>
+            <td>string</td>
+            <td>
+              
+            </td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} -->The code which will be parsed as markdown inline code
+
+            </td>
+          </tr>
+    </tbody>
+  </table>
+</div>
         </main>
       </div>
 
@@ -226,6 +252,32 @@
           Overview
         </a>
         
+      </li><li class="astro-QOEM7CAO">
+        <a class="header-link depth-2 text-decoration-none astro-QOEM7CAO" href="#examples">
+          Examples
+        </a>
+        <ul class="toc list-unstyled astro-QOEM7CAO">
+  <li class="astro-QOEM7CAO">
+        <a class="header-link depth-3 text-decoration-none astro-QOEM7CAO" href="#basic-example">
+          Basic Example
+        </a>
+        
+      </li>
+</ul>
+
+      </li><li class="astro-QOEM7CAO">
+        <a class="header-link depth-2 text-decoration-none astro-QOEM7CAO" href="#api">
+          API
+        </a>
+        <ul class="toc list-unstyled astro-QOEM7CAO">
+  <li class="astro-QOEM7CAO">
+        <a class="header-link depth-3 text-decoration-none astro-QOEM7CAO" href="#inlinecode">
+          InlineCode
+        </a>
+        
+      </li>
+</ul>
+
       </li>
 </ul>
 

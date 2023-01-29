@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" class="astro-VJCJNOLO">
+<html lang="en" data-bs-theme="dark" class="astro-L3FTO42U">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/ab64x64.png">
     <meta name="generator" content="Astro v1.9.2">
     <title>ActiveLink - Astro-Bootstrap</title>
-  <link rel="stylesheet" href="/assets/index.b02b3dcd.css" />
-<link rel="stylesheet" href="/assets/index.10e33757.css" />
-<link rel="stylesheet" href="/assets/accordion.c16e7c96.css" /><script type="module" src="/hoisted.48849804.js"></script></head>
-  <body class="astro-VJCJNOLO">
+  <link rel="stylesheet" href="/assets/index.ffed6f38.css" />
+<link rel="stylesheet" href="/assets/index.e1424953.css" />
+<link rel="stylesheet" href="/assets/accordion.c16e7c96.css" />
+<link rel="stylesheet" href="/assets/scrollspy.f526486c.css" />
+<link rel="stylesheet" href="/assets/active-link.a498e248.css" />
+<link rel="stylesheet" href="/assets/accordion.b1a72058.css" /><script type="module" src="/hoisted.31c053d4.js"></script></head>
+  <body class="astro-L3FTO42U">
     <nav class="navbar navbar-expand-lg bg-primary fixed-top astro-DAMEAHHG" data-bs-theme="dark">
   <div class="container-fluid astro-DAMEAHHG">
     <a class="navbar-brand astro-DAMEAHHG" href="#">Astro-Bootstrap</a>
@@ -19,13 +22,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav me-auto mb-2 mb-lg-0 astro-DAMEAHHG">
         <li class="nav-item">
-  <a href="/" class="nav-link astro-M52JCDLZ">Home</a>
+  <a href="/" class="nav-link astro-J5NU32ET">Home</a>
 
 </li><li class="nav-item">
-  <a href="/getting-started" class="nav-link astro-M52JCDLZ">Getting Started</a>
+  <a href="/getting-started" class="nav-link astro-J5NU32ET">Getting Started</a>
 
 </li><li class="nav-item">
-  <a href="/components" class="nav-link astro-M52JCDLZ">Components</a>
+  <a href="/components" class="nav-link astro-J5NU32ET">Components</a>
 
 </li>
       </ul>
@@ -34,132 +37,450 @@
   </div>
 </nav>
 
-    <div class="content astro-VJCJNOLO">
-      <div class="container-fluid astro-DEZOG66X">
-    <div class="row flex-class astro-DEZOG66X">
-      <div class="col-xl-8 col-lg-6 col-sm-4 col-12 py-2 px-3 astro-DEZOG66X">
-        <main class="astro-DEZOG66X">
-          <h1 id="overview" class="astro-DEZOG66X">ActiveLink</h1>
+    <div class="content astro-L3FTO42U">
+      <div class="container-fluid astro-QL3UKEHM">
+    <div class="row flex-class astro-QL3UKEHM">
+      <div class="col-xl-8 col-lg-6 col-sm-4 col-12 py-2 px-3 astro-QL3UKEHM">
+        <main class="astro-QL3UKEHM">
+          <h1 id="overview" class="astro-QL3UKEHM">ActiveLink</h1>
+          <p class="lead mb-2 astro-QL3UKEHM">
+                <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} -->The ActiveLink component automatically adds a class if the <code>href</code> matches the current page&#39;s path.
+
+              </p>
           
-          
-          <p>Todo: add example of how the astro-bootstrap ActiveLink component can be used</p>
+          <p>The ActiveLink checks if the href matches the current page. If true:</p>
+<ul>
+<li>The <code>activeClass</code> is added (<code>active</code> by default)</li>
+<li>Sets <code>aria-current=&quot;page&quot;</code></li>
+</ul>
+<p>If the <code>disabled</code> (boolean) property is set:</p>
+<ul>
+<li>The <code>disabledClass</code> is added (<code>disabled</code> by default)</li>
+<li><code>tabindex=&quot;-1&quot;</code> is added to disable keyboard tabbing.</li>
+<li>Css <code>curser</code> set to default to emulate standard text.</li>
+<li>The <code>href</code> is removed.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<h3 id="basic-example">Basic Example</h3>
+<div class="container-fluid border rounded g-0 mb-3">
+  <div class="row p-3">
+    <div class="col">
+      <a href="/utilities/active-link" class="custom-class-added astro-VL23RM5B astro-J5NU32ET">Active Link docs page</a>
+
+<br class="astro-VL23RM5B">
+<a href="/" class="astro-VL23RM5B astro-J5NU32ET">Home</a>
+
+<br class="astro-VL23RM5B">
+<a class="astro-VL23RM5B disabled cursor-default astro-J5NU32ET" tabindex="-1">Disabled</a>
+
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="p-2 bg-dark text-white border-top border-bottom">Astro file</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { ActiveLink } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;astro-bootstrap&#39;</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;/utilities/active-link&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;custom-class-added&quot;</span><span style="color: #C9D1D9">&gt;Active Link docs page&lt;/</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">br</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;/&quot;</span><span style="color: #C9D1D9">&gt;Home&lt;/</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">br</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;/disabled&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">disabled</span><span style="color: #C9D1D9">&gt;Disabled&lt;/</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.active</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background-color</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">red</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled</span><span style="color: #C9D1D9">, </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled:hover</span><span style="color: #C9D1D9">, </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled:focus</span><span style="color: #C9D1D9"> </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled:active</span><span style="color: #C9D1D9">, </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled:visited</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">color</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">gray</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"></span></code></pre>
+
+      <!-- {code} -->
+    </div>
+  </div>
+</div>
+
+<h3 id="all-options">All Options</h3>
+<div class="container-fluid border rounded g-0 mb-3">
+  <div class="row p-3">
+    <div class="col">
+      <a href="/utilities/active-link" class="custom-class-added astro-IIAE3J6L astro-J5NU32ET">
+  Active Link docs page
+</a>
+
+<br class="astro-IIAE3J6L">
+<a href="/" class="astro-IIAE3J6L astro-J5NU32ET">Home</a>
+
+<br class="astro-IIAE3J6L">
+<a class="astro-IIAE3J6L disabled-link cursor-default astro-J5NU32ET" tabindex="-1">
+  Disabled
+</a>
+
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="p-2 bg-dark text-white border-top border-bottom">Astro file</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { ActiveLink } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;astro-bootstrap&#39;</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #8B949E">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">ActiveLink</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;/utilities/active-link&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">activeClass</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;active-link&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;custom-class-added&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  Active Link docs page</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">br</span><span style="color: #C9D1D9"> /&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;/&quot;</span><span style="color: #C9D1D9">&gt;Home&lt;/</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">br</span><span style="color: #C9D1D9"> /&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;/disabled&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">disabled</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">disabledClass</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;disabled-link&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  Disabled</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">ActiveLink</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">.active-link</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">background-color</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">red</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled-link</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled-link:hover</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled-link:focus</span><span style="color: #C9D1D9"> </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled-link:active</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #7EE787">a</span><span style="color: #79C0FF">.disabled-link:visited</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">color</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">gray</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">style</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"></span></code></pre>
+
+      <!-- {code} -->
+    </div>
+  </div>
+</div>
+
+<h2 id="api">API</h2>
+<h3 id="activelink">ActiveLink</h3>
+<pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">import { ActiveLink } from &#39;astro-bootstrap&#39;</span></span></code></pre>
+
+<div class="overflow-auto mt-4 mb-5">
+  <table class="mb-0 table table-striped table-bordered">
+    <thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr class="prop-table-row">
+            <td>
+              href 
+              <sup class="text-danger">required</sup>
+            </td>
+            <td>string</td>
+            <td>
+              
+            </td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} -->Passes string to href property of <code>&amp;lt;a&amp;gt;</code> tag.
+
+            </td>
+          </tr><tr class="prop-table-row">
+            <td>
+              class 
+              
+            </td>
+            <td>string</td>
+            <td>
+              
+            </td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} -->Appends classes to the <code>&amp;lt;a&amp;gt;</code> tag.
+
+            </td>
+          </tr><tr class="prop-table-row">
+            <td>
+              activeClass 
+              
+            </td>
+            <td>string</td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} --><code>active</code>
+
+            </td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} -->Class to be appended to <code>&amp;lt;a&amp;gt;</code> tag if the href matches the current page path.
+
+            </td>
+          </tr><tr class="prop-table-row">
+            <td>
+              disabledClass 
+              
+            </td>
+            <td>string</td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} --><code>disabled</code>
+
+            </td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} -->Class to be appended to <code>&amp;lt;a&amp;gt;</code> tag if the link is disabled with the next option.
+
+            </td>
+          </tr><tr class="prop-table-row">
+            <td>
+              disabled 
+              
+            </td>
+            <td>boolean</td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} --><code>false</code>
+
+            </td>
+            <td>
+              <!-- {
+  Astro.slots.has('default') &&
+    (inline ? (
+      <Fragment set:html={xss(marked.parseInline(slot))} />
+    ) : (
+      <Fragment set:html={xss(marked.parse(slot))} />
+    ))
+} -->Disables the link - adds disabledClass, sets <code>tabindex</code> to <code>-1</code>, href is removed and sets css <code>curser</code> to <code>default</code>
+
+            </td>
+          </tr>
+    </tbody>
+  </table>
+</div>
         </main>
       </div>
-      <div class="col-xl-2 col-lg-3 col-sm-4 col-12 order-sm-first sticky-col astro-DEZOG66X">
+
+      <div class="col-xl-2 col-lg-3 col-sm-4 col-12 order-sm-first sticky-col astro-QL3UKEHM">
         <nav class="side-nav py-2">
   <h3 class="h5">Components</h3>
   <ul class="list-unstyled ps-2">
     <li>
-            <a href="/components/accordion" class="text-decoration-none">
-              Accordion <sup class="astro-component text-danger">.astro</sup>
-            </a>
-          </li><li>
-            <a href="/components/alerts" class="text-decoration-none">
-              Alerts 
-            </a>
-          </li><li>
-            <a href="/components/breadcrumb" class="text-decoration-none">
-              Breadcrumb <sup class="astro-component text-danger">.astro</sup>
-            </a>
-          </li><li>
-            <a href="/components/button-group" class="text-decoration-none">
-              Button group 
-            </a>
-          </li><li>
-            <a href="/components/card" class="text-decoration-none">
-              Cards 
-            </a>
-          </li><li>
-            <a href="/components/carousel" class="text-decoration-none">
-              Carousel 
-            </a>
-          </li><li>
-            <a href="/components/close-button" class="text-decoration-none">
-              Close Button 
-            </a>
-          </li><li>
-            <a href="/components/dropdowns" class="text-decoration-none">
-              Dropdowns 
-            </a>
-          </li><li>
-            <a href="/components/list-group" class="text-decoration-none">
-              List Group 
-            </a>
-          </li><li>
-            <a href="/components/modal" class="text-decoration-none">
-              Modal 
-            </a>
-          </li><li>
-            <a href="/components/navbar" class="text-decoration-none">
-              Navbar <sup class="astro-component text-danger">.astro</sup>
-            </a>
-          </li><li>
-            <a href="/components/navs" class="text-decoration-none">
-              Navs <sup class="astro-component text-danger">.astro</sup>
-            </a>
-          </li><li>
-            <a href="/components/offcanvas" class="text-decoration-none">
-              Offcanvas 
-            </a>
-          </li><li>
-            <a href="/components/pagination" class="text-decoration-none">
-              Pagination <sup class="astro-component text-danger">.astro</sup>
-            </a>
-          </li><li>
-            <a href="/components/popover" class="text-decoration-none">
-              Popover 
-            </a>
-          </li><li>
-            <a href="/components/progress" class="text-decoration-none">
-              Progress 
-            </a>
-          </li><li>
-            <a href="/components/scrollspy" class="text-decoration-none">
-              Scrollspy 
-            </a>
-          </li><li>
-            <a href="/components/tabs" class="text-decoration-none">
-              Tabs <sup class="astro-component text-danger">.astro</sup>
-            </a>
-          </li><li>
-            <a href="/components/toast" class="text-decoration-none">
-              Toast 
-            </a>
-          </li><li>
-            <a href="/components/tooltip" class="text-decoration-none">
-              Tooltip 
-            </a>
-          </li>
+        <a href="/components/accordion" class="text-decoration-none">
+          Accordion
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/components/alerts" class="text-decoration-none">
+          Alerts
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/components/breadcrumb" class="text-decoration-none">
+          Breadcrumb
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/components/button-group" class="text-decoration-none">
+          Button group
+          <sup class="text-success">template</sup>
+        </a>
+      </li><li>
+        <a href="/components/card" class="text-decoration-none">
+          Cards
+          <sup class="text-success">template</sup>
+        </a>
+      </li><li>
+        <a href="/components/carousel" class="text-decoration-none">
+          Carousel
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/components/collapse" class="text-decoration-none">
+          Collapse
+          <sup class="text-warning">JS</sup>
+        </a>
+      </li><li>
+        <a href="/components/dropdowns" class="text-decoration-none">
+          Dropdowns
+          <sup class="text-warning">JS</sup>
+        </a>
+      </li><li>
+        <a href="/components/list-group" class="text-decoration-none">
+          List Group
+          <sup class="text-success">template</sup>
+        </a>
+      </li><li>
+        <a href="/components/modal" class="text-decoration-none">
+          Modal
+          <sup class="text-warning">JS</sup>
+        </a>
+      </li><li>
+        <a href="/components/navbar" class="text-decoration-none">
+          Navbar
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/components/navs" class="text-decoration-none">
+          Navs
+          <sup class="text-success">template</sup>
+        </a>
+      </li><li>
+        <a href="/components/pagination" class="text-decoration-none">
+          Pagination
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/components/popovers" class="text-decoration-none">
+          Popovers
+          <sup class="text-warning">JS</sup>
+        </a>
+      </li><li>
+        <a href="/components/scrollspy" class="text-decoration-none">
+          Scrollspy
+          <sup class="text-warning">JS</sup>
+        </a>
+      </li><li>
+        <a href="/components/tabs" class="text-decoration-none">
+          Tabs
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/components/toasts" class="text-decoration-none">
+          Toasts
+          <sup class="text-warning">JS</sup>
+        </a>
+      </li><li>
+        <a href="/components/tooltip" class="text-decoration-none">
+          Tooltips
+          <sup class="text-warning">JS</sup>
+        </a>
+      </li>
   </ul>
   <h3 class="h5">Utilities</h3>
   <ul class="list-unstyled ps-2">
     <li>
-              <a href="/utilities/active-link" class="text-decoration-none">
-                ActiveLink <sup class="astro-component text-danger">.astro</sup>
-              </a>
-            </li>
+        <a href="/utilities/active-link" class="text-decoration-none">
+          ActiveLink
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/utilities/inline-code" class="text-decoration-none">
+          InlineCode
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li><li>
+        <a href="/utilities/marked" class="text-decoration-none">
+          Marked
+          <sup class="text-astro">.astro</sup>
+        </a>
+      </li>
   </ul>
 </nav>
       </div>
-      <div class="col-xl-2 col-lg-3 col-sm-4 d-none d-sm-block sticky-col astro-DEZOG66X">
-        <nav class="toc-wrapper py-2 astro-QK7FX5EL">
-  <h4 class="h5 astro-QK7FX5EL">On this page</h4>
-  <ul class="toc-root toc list-unstyled astro-QK7FX5EL" id="js-toc">
-    <li class="astro-DVA43YIQ">
-  <a class="header-link depth-2 text-decoration-none astro-DVA43YIQ" href="#overview">
-    Overview
-  </a>
-  
-</li>
+      <div class="col-xl-2 col-lg-3 col-sm-4 d-none d-sm-block sticky-col astro-QL3UKEHM">
+        <nav class="toc-wrapper py-2">
+  <h4 class="h5">On this page</h4>
+  <ul class="toc list-unstyled astro-QOEM7CAO">
+  <li class="astro-QOEM7CAO">
+        <a class="header-link depth-2 text-decoration-none astro-QOEM7CAO" href="#overview">
+          Overview
+        </a>
+        
+      </li><li class="astro-QOEM7CAO">
+        <a class="header-link depth-2 text-decoration-none astro-QOEM7CAO" href="#examples">
+          Examples
+        </a>
+        <ul class="toc list-unstyled astro-QOEM7CAO">
+  <li class="astro-QOEM7CAO">
+        <a class="header-link depth-3 text-decoration-none astro-QOEM7CAO" href="#basic-example">
+          Basic Example
+        </a>
+        
+      </li><li class="astro-QOEM7CAO">
+        <a class="header-link depth-3 text-decoration-none astro-QOEM7CAO" href="#all-options">
+          All Options
+        </a>
+        
+      </li>
+</ul>
 
-  </ul>
+      </li><li class="astro-QOEM7CAO">
+        <a class="header-link depth-2 text-decoration-none astro-QOEM7CAO" href="#api">
+          API
+        </a>
+        <ul class="toc list-unstyled astro-QOEM7CAO">
+  <li class="astro-QOEM7CAO">
+        <a class="header-link depth-3 text-decoration-none astro-QOEM7CAO" href="#activelink">
+          ActiveLink
+        </a>
+        
+      </li>
+</ul>
+
+      </li>
+</ul>
+
 </nav>
-
-
 
       </div>
     </div>
   </div>
     </div>
   
+
 </body></html>
+
+
