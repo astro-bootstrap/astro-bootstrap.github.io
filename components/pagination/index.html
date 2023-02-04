@@ -1,68 +1,141 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" class="astro-L3FTO42U">
+<html lang="en" data-bs-theme="auto" class="astro-X7RLLL6E">
   <head>
+    <script>
+      (() => {
+        'use strict';
+        const isDarkMode = () => {
+          return localStorage.getItem('theme') === 'dark' ? true : false;
+        }
+        // check if theme has been set, otherwise get OS/browser setting if browser supports
+        const getPreferredTheme = () => {
+          if (isDarkMode() != null ) {
+            return isDarkMode();
+          }
+          return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        };
+
+        const setTheme = function (isDark) {
+          isDark
+            ? document.documentElement.setAttribute('data-bs-theme', 'dark')
+            : document.documentElement.setAttribute('data-bs-theme', 'light');
+        };
+        setTheme(getPreferredTheme());
+
+        //update theme if browser/OS setting is changed
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', (e) => {
+            setTheme(e.matches);
+          });
+
+        // enable theme switching, on DOMContentLoaded
+        window.addEventListener('DOMContentLoaded', () => {
+          const toggle = document.getElementById('darkmode-toggle');
+          if (isDarkMode() !== toggle.checked) {
+            toggle.checked = !toggle.checked;
+          }
+          toggle &&
+            toggle.addEventListener('change', (event) => {
+              if (event.currentTarget.checked === true) {
+                setTheme(true);
+                localStorage.setItem('theme', 'dark');
+              } else {
+                setTheme(false);
+                localStorage.setItem('theme', 'light');
+              }
+            });
+        });
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/svg+xml" href="/ab64x64.png">
     <meta name="generator" content="Astro v1.9.2">
     <title>Pagination - Astro-Bootstrap</title>
-  <link rel="stylesheet" href="/assets/index.cefa9137.css" />
-<link rel="stylesheet" href="/assets/index.0eb5fac8.css" />
+  <link rel="stylesheet" href="/assets/index.de2bca6d.css" />
+<link rel="stylesheet" href="/assets/index.403bdf70.css" />
 <link rel="stylesheet" href="/assets/accordion.c16e7c96.css" />
-<link rel="stylesheet" href="/assets/scrollspy.f526486c.css" />
+<link rel="stylesheet" href="/assets/scrollspy.3e144e00.css" />
 <link rel="stylesheet" href="/assets/active-link.a498e248.css" />
-<link rel="stylesheet" href="/assets/accordion.edef0ffc.css" /><script type="module" src="/hoisted.95eb1bd8.js"></script></head>
-  <body class="astro-L3FTO42U">
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top astro-U7LSO56Z" data-bs-theme="dark">
-  <div class="container-fluid astro-U7LSO56Z">
-    <a class="navbar-brand astro-U7LSO56Z" href="#">Astro-Bootstrap</a>
+<link rel="stylesheet" href="/assets/accordion.edef0ffc.css" /><script type="module" src="/hoisted.703c4068.js"></script></head>
+  <body class="astro-X7RLLL6E">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top astro-DMLDAPCN" data-bs-theme="dark">
+  <div class="container-fluid astro-DMLDAPCN">
+    <a class="navbar-brand astro-DMLDAPCN" href="#">Astro-Bootstrap</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
     <div class="collapse navbar-collapse" id="siteNav">
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0 astro-U7LSO56Z">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0 astro-DMLDAPCN">
   <li class="nav-item">
-  <a href="/" class="astro-JETIYGDJ" class="nav-link">Home</a>
+  <a href="/" class="nav-link undefined astro-JETIYGDJ" class="nav-link">Home</a>
 
 </li>
 <li class="nav-item">
-  <a href="/getting-started" class="astro-JETIYGDJ" class="nav-link">Getting Started</a>
+  <a href="/getting-started" class="nav-link undefined astro-JETIYGDJ" class="nav-link">Getting Started</a>
 
 </li>
 <li class="nav-item">
-  <a href="/components" class="astro-JETIYGDJ" class="nav-link">Components</a>
+  <a href="/components" class="nav-link undefined astro-JETIYGDJ" class="nav-link">Components</a>
 
 </li>
 
-</ul>
+</ul><ul class="navbar-nav flex-row flex-wrap ms-md-auto astro-DMLDAPCN">
+        <li class="nav-item col-6 col-lg-auto astro-DMLDAPCN">
+          <a class="nav-link d-flex py-2 px-0 px-lg-2  astro-DMLDAPCN" href="http://github.com/astro-bootstrap/astro-bootstrap" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" class="navbar-nav-svg astro-DMLDAPCN" astro-icon="bi:github"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            <small class="d-lg-none ms-2 astro-DMLDAPCN">GitHub</small>
+          </a>
+        </li>
+        <li class="nav-item col-6 col-lg-auto astro-DMLDAPCN">
+          <div class="nav-link d-flex astro-DMLDAPCN astro-KSE37NJ7">
+  <input class="toggle-checkbox astro-KSE37NJ7" type="checkbox" id="darkmode-toggle" aria-label="Toggle user interface mode">
+  <label for="darkmode-toggle" class="astro-KSE37NJ7">
+    <svg viewBox="0 0 16 16" class="sun astro-KSE37NJ7" astro-icon="bi:sun-fill"><path fill="currentColor" d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+    <svg viewBox="0 0 16 16" class="moon astro-KSE37NJ7" astro-icon="bi:moon-fill"><path fill="currentColor" d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+  </label>
+  <small class="d-lg-none ms-2 astro-KSE37NJ7">Switch Theme</small>
 </div>
 
+
+        </li>
+      </ul>
+</div>
+
+   
   </div>
 </nav>
 
-    <div class="content astro-L3FTO42U">
-      <div class="container-fluid astro-KDA2EDWZ">
-    <div class="row flex-class astro-KDA2EDWZ">
-      <div class="py-2 px-3 col-main astro-KDA2EDWZ">
-        <main class="astro-KDA2EDWZ">
-          <h1 id="overview" class="astro-KDA2EDWZ">Pagination</h1>
-          <p class="lead mb-2 astro-KDA2EDWZ">
+
+    <div class="content astro-X7RLLL6E">
+      <div class="container-fluid astro-OUCYSTDP">
+    <div class="row flex-class astro-OUCYSTDP">
+      <div class="py-2 px-3 col-main astro-OUCYSTDP">
+        <main class="astro-OUCYSTDP">
+          <h1 id="overview" class="astro-OUCYSTDP">Pagination</h1>
+          <p class="lead mb-2 astro-OUCYSTDP">
                 Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.
 
               </p>
-          <div class="alert alert-danger astro-KDA2EDWZ" role="alert">
+
+          <div class="alert alert-danger astro-OUCYSTDP" role="alert">
   <div>This component is still under development. Please only use the snippets provided below to avoid breaking changes.
 </div>
   
 </div>
-
-          
+<p class="astro-OUCYSTDP">
+                  View the official docs 
+                  <a href="https://getbootstrap.com/docs/5.2/components/pagination/" class="astro-OUCYSTDP">
+                    here
+                  </a>
+                </p>
           <p>The pagination component generates the pagination controls for the page.</p>
 <p>You must set up the pagination through Astro’s paginate function (see below). This component then accesses the <code>page</code> property to generate the pagination buttons.</p>
-<div class="container-fluid border rounded g-0 mb-3">
+<div class="container-fluid border rounded g-0 mb-3 example-container copy-button-wrapper">
   <div class="row p-3">
-    <div class="col">
-      <div class="d-flex justify-content-center"><nav aria-label="Pagination">
+        <div class="col example__rendered">
+          <div class="d-flex justify-content-center"><nav aria-label="Pagination">
   <ul class="pagination">
     <li class="page-item disabled">
       <a class="page-link cursor-default" tabindex="-1"> Previous </a>
@@ -111,11 +184,30 @@
   </ul>
 </nav>
 </div>
-    </div>
-  </div>
+        </div>
+      </div>
   <div class="row">
     <div class="col">
-      <div class="p-2 bg-dark text-white border-top border-bottom">Astro file</div>
+      <div class="bg-dark border-top border-bottom d-flex align-items-center ps-3 pe-2 py-1">
+        <small class="text-light font-monospace text-uppercase">Astro file</small>
+        <div class="d-flex ms-auto">
+          <button type="button" class="btn-copy">
+            <div class="svg-clipboard">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+              </svg>
+            </div>
+            <div class="svg-clipboard-check d-none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -145,7 +237,6 @@
 <span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">BaseLayout</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"></span></code></pre>
 
-      <!-- {code} -->
     </div>
   </div>
 </div>
@@ -156,7 +247,7 @@
 <pre class="astro-code" style="background-color:#0d1117;overflow-x:auto"><code><span class="line"><span style="color:#c9d1d9">&lt;Pagination page={page} aria-label=&quot;Pagination&quot;&gt;</span></span></code></pre>
 <h2 id="api">API</h2>
 <h3 id="pagination">Pagination</h3>
-<pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">import { Pagination } from &#39;astro-bootstrap&#39;</span></span></code></pre>
+<pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { Pagination } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;astro-bootstrap&#39;</span></span></code></pre>
 
 <div class="overflow-auto mt-4 mb-5">
   <table class="mb-0 table table-striped table-bordered">
@@ -248,7 +339,7 @@
         </main>
       </div>
 
-      <div class="order-sm-first col-nav astro-KDA2EDWZ">
+      <div class="order-sm-first col-nav astro-OUCYSTDP">
         <nav class="side-nav py-2">
   <h3 class="h5">Components</h3>
   <ul class="list-unstyled ps-2">
@@ -365,7 +456,7 @@
   </ul>
 </nav>
       </div>
-      <div class="col-toc astro-KDA2EDWZ">
+      <div class="col-toc astro-OUCYSTDP">
         <nav class="toc-wrapper py-2">
   <h4 class="h5">On this page</h4>
   <ul class="toc list-unstyled astro-QOEM7CAO">
@@ -399,5 +490,6 @@
   
 
 </body></html>
+
 
 
