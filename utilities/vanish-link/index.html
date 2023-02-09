@@ -52,7 +52,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/svg+xml" href="/ab64x64.png">
     <meta name="generator" content="Astro v1.9.2">
-    <title>Collapse - Astro-Bootstrap</title>
+    <title>VanishLink - Astro-Bootstrap</title>
     <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM02DLH2VE"></script>
   <script>
@@ -116,100 +116,14 @@
     <div class="row flex-class astro-O3TOR2H5">
       <div class="py-2 px-3 col-main astro-O3TOR2H5">
         <main class="astro-O3TOR2H5">
-          <h1 id="overview" class="astro-O3TOR2H5">Collapse</h1>
+          <h1 id="overview" class="astro-O3TOR2H5">VanishLink</h1>
           <p class="lead mb-2 astro-O3TOR2H5">
-                Toggle the visibility of content across your project with a few classes and a Bootstrap JS plugin.
+                Anchor tag turns into a Span if no href is passed
 
               </p>
 
-          <div class="alert alert-danger astro-O3TOR2H5" role="alert">
-  <div>This component is still under development. Please only use the snippets provided below to avoid breaking changes.
-</div>
-  
-</div>
-<p>
-  View the official docs 
-  <a href="5.3" target="_blank" rel="noopener">
-    here
-  </a>
-</p>
-          <h2 id="examples">Examples</h2>
-<h3 id="via-data-attribute">Via data-attribute</h3>
-<div class="container-fluid border rounded g-0 mb-3 example-container copy-button-wrapper">
-  <div class="row p-3">
-        <div class="col example__rendered">
-          <p>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-bs-target
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Some placeholder content for the collapse component. This panel is hidden by
-    default but revealed when the user activates the relevant trigger.
-  </div>
-</div>
-
-        </div>
-      </div>
-  <div class="row">
-    <div class="col">
-      <div class="bg-dark border-top border-bottom d-flex align-items-center ps-3 pe-2 py-1">
-        <small class="text-light font-monospace text-uppercase">Astro file</small>
-        <div class="d-flex ms-auto">
-          <button type="button" class="btn-copy">
-            <div class="svg-clipboard code-svg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-              </svg>
-            </div>
-            <div class="svg-clipboard-check d-none code-svg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
-                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
-                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path>
-              </svg>
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
-<span class="line"><span style="color: #8B949E">// Template example only</span></span>
-<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">target</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;collapseExample&#39;</span></span>
-<span class="line"><span style="color: #8B949E">---</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">button</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;btn btn-primary&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">type</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;button&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-toggle</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;collapse&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">data-bs-target</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #A5D6FF">`#${</span><span style="color: #C9D1D9">target</span><span style="color: #A5D6FF">}`</span><span style="color: #FF7B72">}</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">aria-expanded</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;false&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">aria-controls</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">target</span><span style="color: #FF7B72">}</span></span>
-<span class="line"><span style="color: #C9D1D9">  &gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">    Button with data-bs-target</span></span>
-<span class="line"><span style="color: #C9D1D9">  &lt;/</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;collapse&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">id</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">target</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;card card-body&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">    Some placeholder content for the collapse component. This panel is hidden by</span></span>
-<span class="line"><span style="color: #C9D1D9">    default but revealed when the user activates the relevant trigger.</span></span>
-<span class="line"><span style="color: #C9D1D9">  &lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;bootstrap/js/dist/collapse&#39;</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"></span></code></pre>
-
-    </div>
-  </div>
-</div>
-
+          
+          <p>Use the <code>VanishLink</code> component just as you would use a <code>&lt;a&gt;</code> tag. Pass it all the same properties. If you don’t pass a href property, a <code>&lt;span&gt;</code> will be generated, rather than an <code>&lt;a&gt;</code> tag.</p>
 
         </main>
       </div>
@@ -345,19 +259,6 @@
           Overview
         </a>
         
-      </li><li class="astro-QOEM7CAO">
-        <a class="header-link depth-2 text-decoration-none astro-QOEM7CAO" href="#examples">
-          Examples
-        </a>
-        <ul class="toc list-unstyled astro-QOEM7CAO">
-  <li class="astro-QOEM7CAO">
-        <a class="header-link depth-3 text-decoration-none astro-QOEM7CAO" href="#via-data-attribute">
-          Via data-attribute
-        </a>
-        
-      </li>
-</ul>
-
       </li>
 </ul>
 
