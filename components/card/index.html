@@ -64,9 +64,8 @@
   </script>
   <link rel="stylesheet" href="/_astro/index.f9666cda.css" />
 <link rel="stylesheet" href="/_astro/index.17c4cb54.css" />
-<link rel="stylesheet" href="/_astro/accordion.7dac6e1b.css" />
-<link rel="stylesheet" href="/_astro/scrollspy.4ccd09b2.css" />
-<link rel="stylesheet" href="/_astro/active-link.d9d4e040.css" /><script type="module" src="/_astro/hoisted.4bc2f434.js"></script></head>
+<link rel="stylesheet" href="/_astro/accordion.850b1d1b.css" />
+<link rel="stylesheet" href="/_astro/active-link.d9d4e040.css" /><script type="module" src="/_astro/hoisted.e03d45d4.js"></script></head>
   <body class="astro-37FXCHFA">
     <nav class="navbar navbar-expand-lg bg-primary fixed-top astro-5BLMO7YK" data-bs-theme="dark">
   <div class="container-fluid astro-5BLMO7YK">
@@ -123,9 +122,6 @@
           <h1 id="overview" class="astro-CNSQXR4O">Cards</h1>
           <p class="lead mb-2 astro-CNSQXR4O">
                 Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.
-                <a href="/components/accordion" correct-class="astro-CNSQXR4O" class="astro-CNSQXR4O">
-  Accordion link test
-</a>
               </p>
 
           <div class="alert alert-danger astro-CNSQXR4O" role="alert">
@@ -142,6 +138,7 @@
 <div class="container-fluid border rounded g-0 mb-3 example-container copy-button-wrapper">
   <div class="row p-3">
         <div class="col example__rendered">
+          
           <div class="container">
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col">
@@ -174,7 +171,6 @@
         </div>
   </div>
 </div>
-          
         </div>
       </div>
   <div class="row">
@@ -204,6 +200,7 @@
           </div>
         </div><div class="row">
           <div class="col">
+            
             <pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
 <span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> Card </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./Card.astro&#39;</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">type</span><span style="color: #C9D1D9"> { Props </span><span style="color: #FF7B72">as</span><span style="color: #C9D1D9"> CardType } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./Card.astro&#39;</span><span style="color: #C9D1D9">;</span></span>
@@ -247,18 +244,12 @@
 <span class="line"><span style="color: #C9D1D9">  &lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"></span></code></pre>
-            
           </div>
         </div>
 </div>
 <p><strong>Card.astro</strong></p>
 <div class="container-fluid border rounded g-0 mb-3 example-container copy-button-wrapper">
-  <div class="row p-3">
-        <div class="col example__rendered">
-          
-          
-        </div>
-      </div>
+  
   <div class="row">
           <div class="col">
             <div class="bg-dark border-top border-bottom d-flex align-items-center ps-3 pe-2 py-1">
@@ -286,27 +277,24 @@
           </div>
         </div><div class="row">
           <div class="col">
+            
             <pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
-<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> {</span><span style="color: #79C0FF">img</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">alt</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">title</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">text</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">linkText</span><span style="color: #C9D1D9">} </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> Astro.props;</span></span>
-<span class="line"><span style="color: #FF7B72">export</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">interface</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">Props</span><span style="color: #C9D1D9"> {</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">img</span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">string</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">alt</span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">string</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">title</span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">string</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">buttons</span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">Button</span><span style="color: #C9D1D9">[] </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [{ text: </span><span style="color: #A5D6FF">&#39;Left&#39;</span><span style="color: #C9D1D9"> }, { text: </span><span style="color: #A5D6FF">&#39;Center&#39;</span><span style="color: #C9D1D9"> }, { text: </span><span style="color: #A5D6FF">&#39;Right&#39;</span><span style="color: #C9D1D9"> }];</span></span>
+<span class="line"><span style="color: #FF7B72">export</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">interface</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">Button</span><span style="color: #C9D1D9"> {</span></span>
 <span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">text</span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">string</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">href</span><span style="color: #FF7B72">?:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">string</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">linkText</span><span style="color: #FF7B72">?:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">string</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #C9D1D9">}</span></span>
 <span class="line"><span style="color: #8B949E">---</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;card&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">style</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;width: 18rem;&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">img</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">src</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">img</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;card-img-top&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">alt</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">alt</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  &lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;card-body&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">    &lt;</span><span style="color: #7EE787">h5</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;card-title&quot;</span><span style="color: #C9D1D9">&gt;</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">title</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">h5</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">    &lt;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;card-text&quot;</span><span style="color: #C9D1D9">&gt;</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">text</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">    href &amp;&amp; &lt;</span><span style="color: #7EE787">a</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">href</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;btn btn-primary&quot;</span><span style="color: #C9D1D9">&gt;</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">linkText</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">a</span><span style="color: #C9D1D9">&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">  &lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;btn-group&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">role</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;group&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">aria-label</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">&quot;Basic example&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">{</span></span>
+<span class="line"><span style="color: #C9D1D9">    buttons.</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">button</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=&gt;</span><span style="color: #C9D1D9"> (</span></span>
+<span class="line"><span style="color: #C9D1D9">      &lt;</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">type</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">&quot;button&quot;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">class</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">&quot;btn btn-primary&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">button.text</span><span style="color: #FF7B72">}</span></span>
+<span class="line"><span style="color: #C9D1D9">      &lt;/</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9">&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">    ))</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">}</span></span>
 <span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">&gt;</span></span>
 <span class="line"></span></code></pre>
-            
           </div>
         </div>
 </div>
