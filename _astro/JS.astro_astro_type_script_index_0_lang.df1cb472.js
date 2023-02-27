@@ -1,1 +1,0 @@
-import{C as l}from"./collapse.ddfa9808.js";import"./_commonjsHelpers.042e6b4d.js";import"./selector-engine.ae78b31a.js";const o=document.querySelectorAll(".collapse-js");[...o].map(e=>new l(e,{toggle:!1}));
