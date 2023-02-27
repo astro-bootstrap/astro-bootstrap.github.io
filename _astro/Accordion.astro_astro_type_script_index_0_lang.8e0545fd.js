@@ -1,1 +1,0 @@
-import{C as e}from"./collapse.e1213149.js";import"./_commonjsHelpers.042e6b4d.js";import"./base-component.8dcc01b9.js";import"./selector-engine.056ce3f7.js";const l=document.querySelectorAll(".astro-bs.collapse");l.forEach(o=>new e(o,{toggle:!1}));
