@@ -62,15 +62,15 @@
 
     gtag('config', 'G-LBWXP6PBN1');
   </script>
-  <link rel="stylesheet" href="/_astro/_...slug_.847469ae.css" /><script type="module" src="/_astro/hoisted.6c3248d1.js"></script></head>
+  <link rel="stylesheet" href="/_astro/_...slug_.847469ae.css" /><script type="module" src="/_astro/hoisted.bb15a6fc.js"></script></head>
   <body class="astro-37FXCHFA">
     <nav class="navbar navbar-expand-lg bg-primary fixed-top astro-5BLMO7YK" data-bs-theme="dark">
   <div class="container-fluid astro-5BLMO7YK">
     <a class="navbar-brand astro-5BLMO7YK" href="#">Astro-Bootstrap</a>
-    <button class="astro-bs navbar-toggler" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
-    <div class="astro-bs collapse navbar-collapse" id="siteNav">
+    <div class="collapse navbar-collapse" id="siteNav">
   <ul class="navbar-nav me-auto mb-2 mb-lg-0 astro-5BLMO7YK">
   <li class="nav-item astro-5BLMO7YK">
   <a href="/" class="nav-link">Home</a>
@@ -109,7 +109,16 @@
       <div class="row mt-5">
         <div class="col">
           <h1>Getting Started</h1>
-          <p><strong>Step 1 - Install with the package manager of your choice:</strong></p>
+          <p><strong>Step 1 - Create a new astro project</strong></p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E"># create a new project with npm</span></span>
+<span class="line"><span style="color: #C9D1D9">npm create astro@latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E"># create a new project with yarn</span></span>
+<span class="line"><span style="color: #C9D1D9">yarn create astro</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E"># create a new project with pnpm</span></span>
+<span class="line"><span style="color: #C9D1D9">pnpm create astro@latest</span></span></code></pre>
+<p><strong>Step 2 - Install with the package manager of your choice:</strong></p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">#npm</span></span>
 <span class="line"><span style="color: #C9D1D9">npm install astro-bootstrap</span></span>
 <span class="line"></span>
@@ -118,7 +127,7 @@
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E"># pnpm</span></span>
 <span class="line"><span style="color: #C9D1D9">pnpm add astro-bootstrap</span></span></code></pre>
-<p><strong>Step 2 - Ensure that you have bootstrap v5.x installed, along with type definitions (it’s a peer dependency, so install the version that you want)</strong></p>
+<p><strong>Step 3 - Ensure that you have bootstrap v5.x installed, along with type definitions (it’s a peer dependency, so install the version that you want)</strong></p>
 <p>e.g.</p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">#npm</span></span>
 <span class="line"><span style="color: #C9D1D9">npm install bootstrap @popperjs/core @types/bootstrap</span></span>
@@ -128,34 +137,42 @@
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E"># pnpm</span></span>
 <span class="line"><span style="color: #C9D1D9">pnpm add bootstrap @popperjs/core @types/bootstrap</span></span></code></pre>
-<p><strong>Step 3 - Ensure that the bootstrap CSS (your your modified version of it) is being loaded</strong></p>
+<p><strong>Step 4 - Ensure that the bootstrap CSS (your your modified version of it) is being loaded</strong></p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
 <span class="line"><span style="color: #8B949E">// /src/layouts/Layout.astro</span></span>
 <span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'bootstrap/dist/css/bootstrap.css'</span></span>
 <span class="line"><span style="color: #8B949E">---</span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;!</span><span style="color: #7EE787">DOCTYPE</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">html</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">html</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">lang</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"en"</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">head</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">meta</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">charset</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"UTF-8"</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">meta</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">http-equiv</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"X-UA-Compatible"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">content</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"IE=edge"</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">meta</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">name</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"viewport"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">content</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"width=device-width, initial-scale=1.0"</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">title</span><span style="color: #C9D1D9">>Document&#x3C;/</span><span style="color: #7EE787">title</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">head</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">main</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">    &#x3C;</span><span style="color: #7EE787">slot</span><span style="color: #C9D1D9"> /></span></span>
-<span class="line"><span style="color: #C9D1D9">  &#x3C;/</span><span style="color: #7EE787">main</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">html</span><span style="color: #C9D1D9">></span></span></code></pre>
-<p><strong>Step 5 - Import and use an Astro-Bootstrap component</strong></p>
+<span class="line"><span style="color: #C9D1D9">.....</span></span></code></pre>
+<p><strong>Step 6 - Import and use an Astro-Bootstrap component</strong></p>
 <p>e.g.</p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">---</span></span>
-<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> Layout </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'../layouts/Layout.astro'</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { Breadcrumbs } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'astro-bootstrap'</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #8B949E">// /src/layouts/Layout.astro</span></span>
+<span class="line"><span style="color: #FF7B72">export</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">interface</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">Props</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #FFA657">title</span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">string</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> { </span><span style="color: #79C0FF">title</span><span style="color: #C9D1D9"> } </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> Astro.props;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'bootstrap/dist/css/bootstrap.css'</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { Breadcrumb } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'astro-bootstrap'</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #8B949E">---</span></span>
-<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">BaseLayout</span><span style="color: #C9D1D9">>  </span></span>
-<span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">Breadcrumbs</span><span style="color: #C9D1D9"> /></span></span>
-<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">BaseLayout</span><span style="color: #C9D1D9">></span></span></code></pre>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;!</span><span style="color: #7EE787">DOCTYPE</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">html</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">html</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">lang</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"en"</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">	&#x3C;</span><span style="color: #7EE787">head</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">		&#x3C;</span><span style="color: #7EE787">meta</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">charset</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"UTF-8"</span><span style="color: #C9D1D9"> /></span></span>
+<span class="line"><span style="color: #C9D1D9">		&#x3C;</span><span style="color: #7EE787">meta</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">name</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"description"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">content</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"Astro description"</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">		&#x3C;</span><span style="color: #7EE787">meta</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">name</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"viewport"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">content</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"width=device-width"</span><span style="color: #C9D1D9"> /></span></span>
+<span class="line"><span style="color: #C9D1D9">		&#x3C;</span><span style="color: #7EE787">link</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">rel</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"icon"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">type</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"image/svg+xml"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">href</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"/favicon.svg"</span><span style="color: #C9D1D9"> /></span></span>
+<span class="line"><span style="color: #C9D1D9">		&#x3C;</span><span style="color: #7EE787">meta</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">name</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"generator"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">content</span><span style="color: #C9D1D9">=</span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">Astro.generator</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9"> /></span></span>
+<span class="line"><span style="color: #C9D1D9">		&#x3C;</span><span style="color: #7EE787">title</span><span style="color: #C9D1D9">></span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">title</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">title</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">	&#x3C;/</span><span style="color: #7EE787">head</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">	&#x3C;</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">    &#x3C;</span><span style="color: #7EE787">Breadcrumb</span><span style="color: #C9D1D9"> /></span></span>
+<span class="line"><span style="color: #C9D1D9">		&#x3C;</span><span style="color: #7EE787">slot</span><span style="color: #C9D1D9"> /></span></span>
+<span class="line"><span style="color: #C9D1D9">	&#x3C;/</span><span style="color: #7EE787">body</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">html</span><span style="color: #C9D1D9">></span></span></code></pre>
         </div>
       </div>
     </div>

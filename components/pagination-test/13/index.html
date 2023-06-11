@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto" class="astro-37FXCHFA">
+  <head>
+    <script>
+      (() => {
+        'use strict';
+        const isDarkMode = () => {
+          return localStorage.getItem('theme') === 'dark' ? true : false;
+        }
+        // check if theme has been set, otherwise get OS/browser setting if browser supports
+        const getPreferredTheme = () => {
+          if (isDarkMode() != null ) {
+            return isDarkMode();
+          }
+          return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        };
+
+        const setTheme = function (isDark) {
+          isDark
+            ? document.documentElement.setAttribute('data-bs-theme', 'dark')
+            : document.documentElement.setAttribute('data-bs-theme', 'light');
+        };
+        setTheme(getPreferredTheme());
+
+        //update theme if browser/OS setting is changed
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', (e) => {
+            setTheme(e.matches);
+          });
+
+        // enable theme switching, on DOMContentLoaded
+        window.addEventListener('DOMContentLoaded', () => {
+          const toggle = document.getElementById('darkmode-toggle');
+          if (isDarkMode() !== toggle.checked) {
+            toggle.checked = !toggle.checked;
+          }
+          toggle &&
+            toggle.addEventListener('change', (event) => {
+              if (event.currentTarget.checked === true) {
+                setTheme(true);
+                localStorage.setItem('theme', 'dark');
+              } else {
+                setTheme(false);
+                localStorage.setItem('theme', 'light');
+              }
+            });
+        });
+      })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/ab64x64.png">
+    <meta name="generator" content="Astro v2.0.16">
+    <title>Pagination test page - Astro-Bootstrap</title>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBWXP6PBN1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LBWXP6PBN1');
+  </script>
+  <link rel="stylesheet" href="/_astro/_...slug_.847469ae.css" /><script type="module" src="/_astro/hoisted.bb15a6fc.js"></script></head>
+  <body class="astro-37FXCHFA">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top astro-5BLMO7YK" data-bs-theme="dark">
+  <div class="container-fluid astro-5BLMO7YK">
+    <a class="navbar-brand astro-5BLMO7YK" href="#">Astro-Bootstrap</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse" id="siteNav">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0 astro-5BLMO7YK">
+  <li class="nav-item astro-5BLMO7YK">
+  <a href="/" class="nav-link">Home</a>
+</li><li class="nav-item astro-5BLMO7YK">
+  <a href="/getting-started" class="nav-link">Getting Started</a>
+</li><li class="nav-item astro-5BLMO7YK">
+  <a href="/components" class="nav-link">Components</a>
+</li><li class="nav-item astro-5BLMO7YK">
+  <a href="/components#sideUtilities" class="nav-link">Custom Utilities</a>
+</li>
+</ul><ul class="navbar-nav astro-5BLMO7YK">
+        <li class="nav-item col-6 col-lg-auto astro-5BLMO7YK">
+          <a class="nav-link d-flex py-2 px-0 px-lg-2  astro-5BLMO7YK" href="http://github.com/astro-bootstrap/astro-bootstrap" target="_blank" rel="noopener">
+            <svg fill="currentColor" class="navbar-nav-svg astro-5BLMO7YK" viewBox="0 0 16 16" astro-icon="bi-github"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            <small class="d-lg-none ms-2 astro-5BLMO7YK">GitHub</small>
+          </a>
+        </li>
+        <li class="nav-item col-6 col-lg-auto astro-5BLMO7YK">
+          <div class="nav-link d-flex astro-5BLMO7YK astro-TCSRER47" style="--width: 50px;--height: 24px;--bgDark: #242424;--bgLight: #ebebeb;">
+  <input class="toggle-checkbox astro-TCSRER47" type="checkbox" id="darkmode-toggle" aria-label="Toggle user interface mode">
+  <label for="darkmode-toggle" class="astro-TCSRER47">
+    <svg fill="currentColor" class="sun astro-TCSRER47" viewBox="0 0 16 16" astro-icon="bi-sun-fill"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+    <svg fill="currentColor" class="moon astro-TCSRER47" viewBox="0 0 16 16" astro-icon="bi-moon-fill"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+  </label>
+  <small class="d-lg-none ms-2 astro-TCSRER47">Switch Theme</small>
+</div>
+        </li>
+      </ul>
+</div>
+  </div>
+</nav>
+
+    <div class="content astro-37FXCHFA">
+      <h1>List of components (Pagination Test)</h1><p>Page 13 of 13</p><p>2 Items per page</p><p>Items 25 to 25</p><ul>
+    <li>VanishLink</li>
+  </ul><div class="d-flex justify-content-center mt-auto">
+    <nav aria-label="Page pagination control">
+  <ul class="pagination">
+    
+      <li class="page-item">
+  <a href="/components/pagination-test/12" class="page-link ">Previous</a>
+<!-- class:list={['page-link', className]} -->
+</li><li class="page-item">
+  <a href="/components/pagination-test/13" class="page-link ">1</a>
+<!-- class:list={['page-link', className]} -->
+</li><li class="page-item">
+  <span class="page-link ">...</span>
+<!-- class:list={['page-link', className]} -->
+</li><li class="page-item">
+  <a href="/components/pagination-test/13/9" class="page-link ">9</a>
+<!-- class:list={['page-link', className]} -->
+</li><li class="page-item">
+  <a href="/components/pagination-test/13/10" class="page-link ">10</a>
+<!-- class:list={['page-link', className]} -->
+</li><li class="page-item">
+  <a href="/components/pagination-test/13/11" class="page-link ">11</a>
+<!-- class:list={['page-link', className]} -->
+</li><li class="page-item">
+  <a href="/components/pagination-test/13/12" class="page-link ">12</a>
+<!-- class:list={['page-link', className]} -->
+</li><li class="page-item">
+  <a href="/components/pagination-test/13/13" class="page-link ">13</a>
+<!-- class:list={['page-link', className]} -->
+</li><li class="page-item disabled">
+  <span class="page-link ">Next</span>
+<!-- class:list={['page-link', className]} -->
+</li>
+    
+  </ul>
+</nav>
+  </div>
+      
+    </div>
+
+  </body>
+</html>
