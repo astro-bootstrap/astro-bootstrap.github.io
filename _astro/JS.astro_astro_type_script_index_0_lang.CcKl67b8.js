@@ -1,0 +1,1 @@
+import{C as l}from"./NoComponents.astro_astro_type_script_index_0_lang.CM9ubXIt.js";import"./_commonjsHelpers.BosuxZz1.js";import"./selector-engine.DHlzQWq5.js";const o=document.querySelectorAll(".collapse-js");[...o].map(e=>new l(e,{toggle:!1}));

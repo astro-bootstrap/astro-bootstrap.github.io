@@ -1,5 +1,0 @@
-import{c as p}from"./_commonjsHelpers.042e6b4d.js";import{b,r as E}from"./base-component.4000c694.js";var t={},v={get exports(){return t},set exports(i){t=i}};/*!
-  * Bootstrap component-functions.js v5.2.3 (https://getbootstrap.com/)
-  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */var a;function q(){return a||(a=1,function(i,c){(function(n,s){s(c,b(),E())})(p,function(n,s,o){const u=(e=>e&&typeof e=="object"&&"default"in e?e:{default:e})(s),l=(e,f="hide")=>{const m=`click.dismiss${e.EVENT_KEY}`,r=e.NAME;u.default.on(document,m,`[data-bs-dismiss="${r}"]`,function(d){if(["A","AREA"].includes(this.tagName)&&d.preventDefault(),o.isDisabled(this))return;const g=o.getElementFromSelector(this)||this.closest(`.${r}`);e.getOrCreateInstance(g)[f]()})};n.enableDismissTrigger=l,Object.defineProperties(n,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}})})}(v,t)),t}export{q as r};
